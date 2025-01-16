@@ -9,9 +9,13 @@
 <body>
     <div class="login_container">
         <form action="post" id="login_form" onsubmit="return login(event)">
-            <span>Login</span>
+            <span id="title">Login</span>
             <input type="text" class="text" id="id" placeholder="아이디">
             <input type="password" class="text" id="pw" placeholder="비밀번호">
+            <span>
+                <label class="checklist"><input type="checkbox" id="remember_id" onchange="remember_id"> id 기억하기</label>
+                <label class="checklist"><input type="checkbox" id="auto_login" onchange="remember_id_pw"> 자동 로그인</label>
+            </span>
             <a href="signup.html">회원가입</a>
             <button type="submit">로그인</button>
         </form>
