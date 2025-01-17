@@ -11,7 +11,10 @@
         <form action="post" id="login_form" onsubmit="return login(event)">
             <span id="title">Login</span>
             <input type="text" class="text" id="id" placeholder="아이디">
-            <input type="password" class="text" id="pw" placeholder="비밀번호">
+            <span class="password_container">
+                <input type="password" class="text" id="pw" placeholder="비밀번호">
+                <img src="./images/eye_open.svg" class="eye" onclick="clickEye()">
+            </span>
             <span>
                 <label class="checklist"><input type="checkbox" id="remember_id" onchange="remember_id"> id 기억하기</label>
                 <label class="checklist"><input type="checkbox" id="auto_login" onchange="remember_id_pw"> 자동 로그인</label>

@@ -84,3 +84,14 @@
                 transform:translateY(-1px) translateX(-0.8px);
             }
         }
+
+        .password_container{
+            position: relative;
+        }
+        .password_container .eye{
+            position: absolute;
+            cursor: pointer;
+            width: 25px;
+            right: 10px;
+            top: 20%;
+        }

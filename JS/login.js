@@ -8,34 +8,26 @@ let login = (event) =>{
     const pw = localStorage.getItem("userPw");
     
    if(id!=null){
-    if(userPw.length<6){
-        wrongDiv.textContent = ('비밀번호는 6~8자리로 입력해주세요');
-    }
-    else if(userId===id){
-        if(userPw===pw){
+        if(userId===id&&userPw==pw){
             if(document.getElementById("remember_id").checked){
                 remember_id();
+            } else{
+                localStorage.removeItem("remember_id");
             }
             if(document.getElementById("auto_login").checked){
                 remember_id_pw();
+            } else{
+                localStorage.removeItem("auto_login");
             }
             window.location.href = "main.html";
         }
         else{
-            wrongDiv.textContent = "비밀번호를 잘못 입력하셨습니다."
+            wrongDiv.textContent = "id 혹은 비밀번호를 잘못 입력하셨습니다."
             clear();
         }
     }
-    else{
-        wrongDiv.textContent = "id를 잘못 입력하셨습니다..";
-        clear();
-    }
-   }
-   else{
-    wrongDiv.textContent = "등록되지 않은 id 입니다..";
-    clear();
-   }
 }
+
 
 window.onload = function(){
     const remember_id = localStorage.getItem("remember_id");
@@ -69,4 +61,17 @@ function remember_id_pw(){
 function clear(){
     document.getElementById("id").value = "";
     document.getElementById("pw").value = "";
+}
+
+function clickEye(){
+    const eyeImg = document.querySelector(".eye");
+
+    if(pw.type === "password"){
+        pw.type = "text";
+        eyeImg.src = "./images/eye_close.svg";
+    }
+    else{
+        pw.type = "password";
+        eyeImg.src = "./images/eye_open.svg";
+    }
 }
