@@ -70,12 +70,17 @@
             animation: buttonOn 0.3s forwards;
             background-color: #1976d2d7;
         }
+        #wrong_msg{
+            color: red;
+            font-size: 14px;
+            padding: 5px;
+        }
         @keyframes buttonOn {
             from{
                 box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.1);
             }
             to{
                 box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.2);
-                transform:translateY(-1px); 
+                transform:translateY(-1px) translateX(-0.8px);
             }
         }
