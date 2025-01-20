@@ -6,3 +6,12 @@ toogleBtn.addEventListener('click',()=>{
     menu.classList.toggle('active');
     icons.classList.toggle('active');
 });
+
+document.getElementById('scrollButton').addEventListener('click', () => {
+    // 특정 위치로 이동
+    window.scrollTo({
+      top: 10, 
+      left: 0, 
+      behavior: 'smooth', 
+    });
+  });
