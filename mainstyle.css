@@ -5,12 +5,12 @@ body{
     
 }
 
-a{
+header a{
     text-decoration: none;
     color: white;
     font-size: 24px;
 }
-a:hover{
+header a:hover{
     color: green;
 }
 .navbar{
@@ -137,7 +137,7 @@ a:hover{
 }
 .banner{
     width: 300px;
-    height: 90%;
+    height: 87%;
     margin: 20px;
     border: 1px solid black;
     background:white;
@@ -145,7 +145,7 @@ a:hover{
 }
 .story{
     width: 300px;
-    height: 90%;
+    height: 87%;
     margin: 20px;
     background: white;
     border: 1px solid black;
@@ -192,4 +192,50 @@ a:hover{
         
     }   
     
+}
+
+
+
+
+.footer_container{
+    border-top: 1px solid black;
+
+}
+
+.footer_menu{
+    border-bottom: 1px solid gainsboro;
+}
+
+.footer_menu ul{
+    overflow: hidden;
+    display: flex;
+    justify-content:end;
+}
+
+.footer_menu li{
+    list-style: none;
+    margin-left: 22px;
+    float: left;
+}
+
+.footer_menu li a{
+    text-decoration: none;
+    color: #263343;
+}
+
+.footer_menu li a:hover{
+    color: black;
+}
+
+
+
+
+footer p span{
+    display: inline-block;
+    padding: 0 8px 0 8px;
+}
+
+footer p span.first{
+    background: 0;
+    padding-left: 0;
 }
