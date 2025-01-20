@@ -10,7 +10,7 @@ toogleBtn.addEventListener('click',()=>{
 document.getElementById('scrollButton').addEventListener('click', () => {
     // 특정 위치로 이동
     window.scrollTo({
-      top: 10, 
+      top: 0,
       left: 0, 
       behavior: 'smooth', 
     });
