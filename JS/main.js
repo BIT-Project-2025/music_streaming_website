@@ -72,13 +72,13 @@ window.addEventListener('scroll', () =>{
     ,
     {
         "id":5,
-        "title":"toxic till the end",
-        "singer":"로제 (ROSÉ)"
+        "title":"REBEL HEART",
+        "singer":"IVE (아이브)"
     },
     {
         "id":6,
-        "title":"REBEL HEART",
-        "singer":"IVE (아이브)"
+        "title":"toxic till the end",
+        "singer":"로제 (ROSÉ)"
     }
     ,
     {
@@ -120,6 +120,33 @@ window.addEventListener('scroll', () =>{
                         <span class="song_start" onclick="music_start(event)"><i class="fa-solid fa-play"></i></span>`
     chart.appendChild(li);
   }
+  // --------------------이미지 슬라이드2
+const outer = document.querySelector('.outer');
+const innerList = document.querySelector('.inner-list');
+const inners = document.querySelectorAll('.inner');
+let currentIndex1 = 0; // 현재 슬라이드 화면 인덱스
+
+const buttonLeft = document.querySelector('.button-left');
+const buttonRight = document.querySelector('.button-right');
+
+inners.forEach((inner) => {
+  inner.style.width = `${outer.clientWidth}px`; // inner의 width를 모두 outer의 width로 만들기
+})
+
+innerList.style.width = `${outer.clientWidth * inners.length}px`; // innerList의 width를 inner의 width * inner의 개수로 만들기
+
+buttonLeft.addEventListener('click', () => {
+  currentIndex1--;
+  currentIndex1 = currentIndex1 < 0 ? 0 : currentIndex1; // index값이 0보다 작아질 경우 0으로 변경
+  innerList.style.marginLeft = `-${outer.clientWidth * currentIndex1}px`; // index만큼 margin을 주어 옆으로 밀기
+});
+
+buttonRight.addEventListener('click', () => {
+  currentIndex1++;
+  currentIndex1 = currentIndex1 >= inners.length ? inners.length - 1 : currentIndex1; // index값이 inner의 총 개수보다 많아질 경우 마지막 인덱스값으로 변경
+  innerList.style.marginLeft = `-${outer.clientWidth * currentIndex1}px`; // index만큼 margin을 주어 옆으로 밀기
+});
+
   // --------------------로그인 메뉴
   const login = sessionStorage.getItem('login');
   const navbar__menu = document.querySelector('.navbar__menu');

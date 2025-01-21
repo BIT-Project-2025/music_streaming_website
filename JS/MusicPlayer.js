@@ -4,9 +4,12 @@ const tracks = [
   { title: "Whiplash", artist: "aespa", image: "../main/images/chart_image2.jpg", duration: "03:05", containerColor: "", audio:"../main/Music/Whiplash.mp3" },
   { title: "나는 반딧불", artist: "황가람", image: "../main/images/chart_image3.jpg", duration: "03:36", containerColor: "", audio:"../main/Music/나는 반딧불.mp3"},
   { title: "APT.", artist: "로제", image: "../main/images/chart_image4.jpg", duration: "02:50", containerColor: "", audio:"../main/Music/아파트.mp3"},
-  { title: "REBEL HEART", artist: "아이브", image: "../main/images/chart_image5.jpg", duration: "03:08", containerColor: "", audio:"../main/Music/아파트.mp3"},
-  { title: "REBEL HEART", artist: "아이브", image: "../main/images/chart_image5.jpg", duration: "03:08", containerColor: "", audio:"../main/Music/아파트.mp3"},
-
+  { title: "REBEL HEART", artist: "아이브", image: "../main/images/chart_image5.jpg", duration: "03:08", containerColor: "", audio:"../main/Music/REBEL HEART.mp3"},
+  { title: "toxic till the end", artist: "로제", image: "../main/images/chart_image6.jpg", duration: "02:36", containerColor: "", audio:"../main/Music/toxic till the end.mp3"},
+  { title: "Drowning", artist: "WOODZ", image: "../main/images/chart_image7.jpg", duration: "02:36", containerColor: "", audio:"../main/Music/Drowning.mp3"},
+  { title: "Happy", artist: "데이식스", image: "../main/images/chart_image8.jpg", duration: "03:09", containerColor: "", audio:"../main/Music/HAPPY.mp3"},
+  { title: "오늘만 I LOVE YOU", artist: "BOYNEXTDOOR", image: "../main/images/chart_image9.jpg", duration: "02:41", containerColor: "", audio:"../main/Music/오늘만 I LOVE YOU.mp3"},
+  { title: "Power", artist: "G-DRAGON", image: "../main/images/chart_image10.jpg", duration: "02:23", containerColor: "", audio:"../main/Music/Power.mp3"},
 ];
 
 const pastelColors = [
