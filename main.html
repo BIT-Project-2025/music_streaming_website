@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./CSS/mainstyle.css">
+    <link rel="stylesheet" href="./CSS/MusicPlayer.css">
+    <title>Music playlist</title>
+    <script src="https://kit.fontawesome.com/62f45db2c0.js" 
+    crossorigin="anonymous">
+    </script>
+    <script src="./JS/main.js" defer>
+    </script>
+</head>
+<body>
+    <!--헤더-->
+    <header>
+        <nav class="navbar">
+            <div class="navbar__logo">
+                <i class="fa-solid fa-music"></i>
+                <a href="">Music</a>
+            </div>
+        
+            <ul class="navbar__menu">
+            </ul>
+
+            <ul class="navbar__icons">
+                <fieldset>
+                    <label>
+                      <input role="switch" type="checkbox" checked id="dark_mode"/>
+                      <span id="dark_mode_text">화면 밝기</span>
+                    </label>
+                  </fieldset>
+            </ul>
+
+        <a href="#" class="navbar__toogleBtn">
+            <i class="fa-solid fa-bars"></i>
+        </a>
+    </nav>
+</header>
+
+<!--이미지 슬라이더-->
+<section class="img-slider-container">
+    <div class="img-slider">
+        <img src="./images/헤드셋.jpg" alt="Slide 1" class="img-slide">
+        <img src="./images/헤드셋.jpg" alt="Slide 2" class="img-slide">
+        <img src="./images/헤드셋.jpg" alt="Slide 3" class="img-slide">
+    </div>
+    <button class="prev" id="prevBtn">◀</button>
+    <button class="next" id="nextBtn">▶</button>
+</section>
+
+<!--그리드 컨테이너-->
+<section class="grid">
+    <div class="container">
+        <div class="rank">
+            <div calss="title">
+                <h1>곡 차트</h1>
+            <div class="info">
+                <strong>현재 시간</strong>
+                <time datetime=""></time>
+            </div>
+            </div>
+            <ul class="rank__menu">
+            </ul>
+        </div>
+        <div class="banner">2</div>
+        <div class="story">3</div>
+    </div>
+</section>
+ 
+ <!--사이드바-->
+ <section>
+    <div class="inner_body">
+        <button onclick="scrollButton" id="scrollButton"><i class="fa-solid fa-caret-up"></i></button>
+    </div>
+</section>
+
+<!--재생 모달-->
+<section id="music_container">
+    <div class="music-player">
+        <!-- Top Section -->
+        <div class="top-section">
+            <div class="icon" id="like">&#9825;</div> <!-- Heart Icon -->
+            <div class="icon" id="close"><i class="fa-solid fa-xmark"></i></div> <!-- 닫기 버튼 -->
+        </div>
+
+        <!-- Album Art -->
+        <div class="album-art">
+            <img src="" alt="Album Art">
+        </div>
+
+        <!-- Track Info -->
+        <div class="track-info">
+            <div class="track-title" id="track-title"></div>
+            <div class="track-artist" id="track-artist"></div>
+        </div>
+
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="controls">
+            <button id="prev">◀◀</button>
+            <button class="play-button" id="play">&#9654;</button>
+            <button id="next">▶▶</button>
+        </div>
+
+        <!-- Time -->
+        <div class="time">
+            <span id="current-time">00:00</span> / <span id="total-time">03:16</span>
+        </div>
+    </div>
+    <audio id="audio" preload="auto"></audio> <!-- 실제 음악 파일 로드 -->
+</div>
+    <script src="./JS/MusicPlayer.js"></script> <!-- 스크립트 파일 링크 -->
+</section>
+
+<!--푸터 부분-->
+<footer>
+<div class="footer_container">
+    <div class="footer_menu">
+        <ul>
+            <li>
+                <a href="//www.melon.com/m6/campaign.htm"><span>멜론6.0 둘러보기</span></a>
+            </li>
+            <li>
+                <a href="//studio.melon.com/"><span>멜론 스튜디오</span></a>
+            </li>
+            <li>
+                <a href="https://www.melon.com/customer/serviceintro/index.htm"><span>Windows 플레이어</span></a>
+            </li>
+            <li><a href="https://www.melon.com/customer/serviceintro/multi_pc_web.htm"><span>Mac 플레이어</span></a>
+            </li>
+            <li><a href="https://faqs2.melon.com/customer/index.htm"><span>고객센터</span></a>
+            </li>
+        </ul>
+    </div>
+
+    <p>
+        <span class="frist">
+            <strong>(주)카카오엔터테이먼트</strong>
+            "&nbsp;&nbsp;경기도 성남시 분당구 판교역로 221"
+        </span>
+        <span>공동대표이사 : 권기수, 장윤중</span>
+        <span>사업자등록번호 : 220-88-02594</span>
+        <span>통신판매업신고번호 : 2018-성남분당B-0004 사업자정보확인</span>
+        <br>
+        <span class="first">문의전화 : 1566-7727 (평일 09:00-18:00, 유로)</span>
+        <span>"이메일 :" melon_info@kakaoent.com</span>
+        <span>호스팅서비스사업자 : (주)카카오엔터인먼트</span>
+    </p>
+</div>
+</footer>
+
+</body>
+</html>

@@ -19,7 +19,7 @@ let login = (event) =>{
             } else{
                 localStorage.removeItem("auto_login");
             }
-            window.location.href = "main.html";
+            go_main();
         }
         else{
             wrongDiv.textContent = "id 혹은 비밀번호를 잘못 입력하셨습니다."
@@ -56,6 +56,11 @@ function remember_id(){
 function remember_id_pw(){
     remember_id();
     localStorage.setItem("auto_login",true);
+}
+
+function go_main(){
+    sessionStorage.setItem('login','true');
+    window.location.href = "main.html";
 }
 
 function clear(){
