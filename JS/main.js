@@ -49,59 +49,16 @@ window.addEventListener('scroll', () =>{
 });
   // -------------------차트 데이터
   const songs = [
-    {
-        "id":1,
-        "title":"HOME SWEET HOME",
-        "singer":"G-DRAGON"
-    },
-    {
-        "id":2,
-        "title":"Whiplash",
-        "singer":"easpa"
-    },
-    {
-        "id":3,
-        "title":"나는 반딧불",
-        "singer":"황가람"
-    },
-    {
-        "id":4,
-        "title":"APT.",
-        "singer":"로제 (ROSÉ), Bruno Mars"
-    }
-    ,
-    {
-        "id":5,
-        "title":"REBEL HEART",
-        "singer":"IVE (아이브)"
-    },
-    {
-        "id":6,
-        "title":"toxic till the end",
-        "singer":"로제 (ROSÉ)"
-    }
-    ,
-    {
-        "id":7,
-        "title":"Drowning",
-        "singer":"WOODZ"
-    },
-    {
-        "id":8,
-        "title":"HAPPY",
-        "singer":"DAY6 (데이식스)"
-    }
-    ,
-    {
-        "id":9,
-        "title":"오늘만 I LOVE YOU",
-        "singer":"BOYNEXTDOOR"
-    },
-    {
-        "id":10,
-        "title":"Power",
-        "singer":"G-DRAGON"
-    }
+    {"id":1, "title":"HOME SWEET HOME",  "singer":"G-DRAGON"},
+    {"id":2, "title":"Whiplash", "singer":"easpa"},
+    {"id":3, "title":"나는 반딧불","singer":"황가람"},
+    {"id":4,"title":"APT.","singer":"로제 (ROSÉ), Bruno Mars"},
+    {"id":5,"title":"REBEL HEART","singer":"IVE (아이브)"},
+    {"id":6,"title":"toxic till the end","singer":"로제 (ROSÉ)"},
+    {"id":7,"title":"Drowning","singer":"WOODZ"},
+    {"id":8,"title":"HAPPY","singer":"DAY6 (데이식스)"},
+    {"id":9,"title":"오늘만 I LOVE YOU","singer":"BOYNEXTDOOR"},
+    {"id":10,"title":"Power","singer":"G-DRAGON"}
     ]
   // -------------------차트
   // 차트 추가
@@ -112,7 +69,7 @@ window.addEventListener('scroll', () =>{
     const li  = document.createElement('li');
     li.classList.add("chart_list");
     if(i%2===0){
-        li.style.backgroundColor = 'white';
+        li.style.backgroundColor = '#F8F8F8';
     }
     li.innerHTML = `${i}<img src="images/chart_image${i}.jpg">
                         <span class="song_title">${songs[i-1].title}</span>
@@ -178,13 +135,28 @@ buttonRight.addEventListener('click', () => {
   
   toggle.addEventListener('change',() =>{
     const body = document.body;
+    const nav = document.querySelector('.navbar');
+    const grid = document.querySelector('.grid > .container');
+    const nt1 = document.querySelectorAll('.nt1');
 
     body.style.transition = 'background-color 0.5s ease';
+    nav.style.transition = 'background-color 0.5s ease';
+    grid.style.transition = 'background-color 0.5s ease';
 
     if(toggle.checked){
         body.style.backgroundColor = '#ffffff';
+        nav.style.backgroundColor = '#5f85eb';
+        grid.style.backgroundColor = '#ffffff';
+        nt1.forEach(element => {
+          element.style.color = '#263343';
+        });
     }
     else{
         body.style.backgroundColor = '#263343';
+        nav.style.backgroundColor = '#263343';
+        grid.style.backgroundColor = '#263343';
+        nt1.forEach(element => {
+          element.style.color = '#ffffff';
+        });
     }
   });

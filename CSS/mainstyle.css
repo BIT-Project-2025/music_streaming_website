@@ -14,7 +14,7 @@ header a:hover{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color:#263343;
+    background-color:#5f85eb;
     padding: 8px 12px;
     position:sticky; 
 
@@ -61,40 +61,6 @@ header a:hover{
     font-size: 24px;
     color: #d49466;
 }
-
-@media screen and (max-width: 768px) {
-    .navbar{
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 8px 24px;
-    }
-
-    .navbar__menu{
-        display: none;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
-
-    .navbar__menu li{
-        width: 100%;
-        text-align: center;
-    }
-    .navbar__icons{
-        display: none;
-        justify-content: center;
-        width: 100%;
-    }
-    .navbar__toogleBtn{
-        display: block;
-    }
-
-   .navbar__menu.active,
-   .navbar__icons.active{
-    display: flex;
-   }
-}
-
 /* 슬라이드 */
 .img-slider-container {
     position: relative;
@@ -138,64 +104,93 @@ button:hover {
 .grid {
     display: flex;
     justify-content: center;
-    margin: 100px 0; /* 그리드 주변 여백 */
+    margin: 250px 0;
 }
 
 .container {
     background: white;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px; /* 그리드 아이템 간격 */
+    grid-template-columns: 1fr;
+    gap: 20px;
 }
 
 .rank {
-    min-width: 450px; /* 최소 너비 설정 */
-    height: 100%;
-    border: 1px groove black;
-    border-radius: 5px;
+    width: 100%;
+    max-width: 1000px; /* 적절한 너비 제한 */
+    border: 1px solid #ccc;
+    border-radius: 8px;
     background: white;
     display: flex;
-    flex-direction: column; /* 세로로 배치 */
+    flex-direction: column;
+    padding: 20px; /* 내부 여백 */
 }
 
 .rank .title {
-    margin-bottom: 10px; /* 제목과 다른 요소 간격 */
+    margin-bottom: 15px;
+    text-align: center; /* 제목 가운데 정렬 */
 }
 
 .rank .info {
-    margin-bottom: 20px; /* 시간 정보와 리스트 간격 */
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: gray;
+    text-align: center;
 }
 
 .rank__menu {
-    display: flex;
-    flex-direction: column; /* 리스트 항목들을 세로로 배치 */
-    gap: 10px; /* 항목 간 간격 */
     padding: 0;
+    margin: 0;
     list-style: none; /* 기본 리스트 스타일 제거 */
 }
 
 .rank__menu > li {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    background-color: whitesmoke;
-    border-bottom: .1px solid gray;
-    color: #263343;
-    padding: 10px; /* 각 항목 내부 여백 */
+    justify-content: space-between;
+    padding: 10px 15px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+
+.rank__menu > li:hover {
+    background-color: #f0f0f0; /* 호버 시 배경색 */
+}
+
+.chart_list > img {
+    width: 40px;
+    height: 40px;
+    border-radius: 4px; /* 이미지 모서리 둥글게 */
+    margin-right: 10px; /* 이미지와 텍스트 간격 */
+    margin-left: 10px;
+}
+
+.song_title,
+.song_artist {
+    flex: 1; /* 텍스트가 균등 분배되도록 */
+    margin-left: 10px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
 .song_start {
     cursor: pointer;
-    height: 30px; /* 클릭 버튼 크기 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    color: #555;
+    font-size: 16px;
+    padding: 5px;
+}
+
+.song_start:hover {
+    color: #5f85eb; /* 호버 시 색상 변경 */
 }
 
 .chart_list > img {
     width: 35px;
     height: 35px;
-    left: 100px; /* 이미지와 텍스트 간격 */
+    left: 100px;
 }
 .rank:nth-child(1){
     grid-column: 1/2;
@@ -242,7 +237,7 @@ button:hover {
 }
 .introduce{
     width: 120%;
-    height: 400px;
+    height: 200px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     margin: 150px 0px;
@@ -315,9 +310,13 @@ button:hover {
 }
 
 /* 푸터 */
+footer{
+    color: rgba(255, 255, 255, 0.9);
+}
 .footer_container{
+    background-color: #263343;
     border-top: 1px solid black;
-
+    padding: 20px;
 }
 
 .footer_menu{
@@ -338,22 +337,16 @@ button:hover {
 
 .footer_menu li a{
     text-decoration: none;
-    color: #263343;
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .footer_menu li a:hover{
-    color: black;
+    color: white;
+}
+footer p{
+    padding: 30px;
 }
 
-footer p span{
-    display: inline-block;
-    padding: 0 8px 0 8px;
-}
-
-footer p span.first{
-    background: 0;
-    padding-left: 0;
-}
 /* 다크 모드 토글 */
 label {
     display: inline-flex;
