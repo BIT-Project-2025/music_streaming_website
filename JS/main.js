@@ -74,9 +74,25 @@ window.addEventListener('scroll', () =>{
     li.innerHTML = `${i}<img src="images/chart_image${i}.jpg">
                         <span class="song_title">${songs[i-1].title}</span>
                         <span class="song_artist">${songs[i-1].singer}</span>
-                        <span class="song_start" onclick="music_start(event)"><i class="fa-solid fa-play"></i></span>`
+                        <button class="song_start play_button" onclick="music_start(event)"><i class="fa-solid fa-play"></i></button>`
     chart.appendChild(li);
   }
+  // 재생 버튼 이벤트 추가
+  const play_buttons = document.querySelectorAll('.song_start');
+
+  play_buttons.forEach(button => {
+    button.addEventListener('click', function(event) {
+      // 모든 버튼에서 'active' 클래스를 제거
+      play_buttons.forEach(btn => btn.classList.remove('active'));
+      
+      // 클릭된 버튼에 'active' 클래스를 추가
+      event.target.classList.add('active');
+      console.log(event.target.classList.add('active'));
+
+      music_start(event)
+    });
+  });
+
   // --------------------이미지 슬라이드2
 const outer = document.querySelector('.outer');
 const innerList = document.querySelector('.inner-list');
@@ -160,3 +176,18 @@ buttonRight.addEventListener('click', () => {
         });
     }
   });
+
+  // 현재 시간 출력
+  function updateClock() {
+    var now = new Date();
+    var hours = now.getHours().toString().padStart(2, '0');
+    var minutes = now.getMinutes().toString().padStart(2, '0');
+    var seconds = now.getSeconds().toString().padStart(2, '0');
+
+    var timeString = `${hours}:${minutes}:${seconds}`;
+    document.getElementById('clock').textContent = timeString;
+}
+
+setInterval(updateClock, 1000);
+updateClock();
+

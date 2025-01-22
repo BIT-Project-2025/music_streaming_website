@@ -48,7 +48,12 @@ function updateTrack() {
   progressElement.style.width = "0%";
   currentTimeElement.textContent = "00:00";
   musicPlayer.style.backgroundColor = getRandomPastelColor();
+
+  audioElement.pause();  // 이전 오디오를 멈추고
+  audioElement.load();   // 오디오를 로드
   audioElement.src = track.audio; // 트랙의 오디오 파일 로드
+
+  audioElement.play();
 }
 
 // 진행 바를 업데이트하는 함수
@@ -126,9 +131,10 @@ close.addEventListener('click', ()=>{
   // 음악 멈추기
   audioElement.pause();
   clearInterval(interval);
+  play_buttons.forEach(btn => btn.classList.remove('active'));
 });
 
-// 차트 재생
+// 음악 시작 함수 (트랙 변경 시)
 function music_start(event) {
   const music_container = document.getElementById('music_container');
   music_container.style.display= 'flex';
@@ -144,7 +150,9 @@ function music_start(event) {
     audioElement.currentTime = 0; // 트랙 시작 위치로 이동
   }
 
-  audioElement.play(); // 새 트랙 재생
+  audioElement.play().catch((error) => {
+    console.error("음악 재생에 실패했습니다.", error);
+  }); // 새 트랙 재생
   isPlaying = true; // 재생 상태 설정
   playButton.innerHTML = "&#10073;&#10073;"; // 일시 정지 버튼 표시
 
